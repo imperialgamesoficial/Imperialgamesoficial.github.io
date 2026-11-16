@@ -21,20 +21,29 @@ body {
 header {
   background: linear-gradient(135deg,#101a30,#202b43);
   border-bottom: 3px solid #e8a526;
-  padding: 24px 12px;
+  padding: 15px 12px 24px;
   text-align: center;
 }
 
+.logo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 12px;
+}
+
 header h1 {
-  color: #f5b52b;
-  letter-spacing: 3px;
-  font-size: 25px;
+  color: #ffb52b;
+  font-size: 27px;
+  letter-spacing: 2px;
 }
 
 header p {
-  color: #ddd;
   margin-top: 8px;
-  font-size: 13px;
+  color: #ddd;
+  font-size: 14px;
 }
 
 .container {
@@ -43,81 +52,91 @@ header p {
   padding: 15px;
 }
 
+.botoes {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.botao {
+  flex: 1;
+  padding: 20px 8px;
+  border: 2px solid #e8a526;
+  border-radius: 18px;
+  background: #101a30;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao.ativo {
+  background: linear-gradient(135deg,#ffb52b,#c66a05);
+  color: #101010;
+}
+
 .titulo {
-  color: #f5b52b;
-  margin: 18px 0;
+  color: #ffb52b;
   text-align: center;
+  font-size: 23px;
+  margin: 28px 0 20px;
 }
 
 .conta {
-  background: #11192b;
-  border: 1px solid #303b52;
-  border-radius: 14px;
-  overflow: hidden;
+  background: #111a2d;
+  border: 1px solid #47516a;
+  border-left: 5px solid #e8a526;
+  border-radius: 18px;
+  padding: 18px;
   margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.referencia {
+  color: #ffb52b;
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 .foto {
   width: 100%;
+  height: auto;
   display: block;
-}
-
-.info {
-  padding: 17px;
-}
-
-.ref {
-  color: #f5b52b;
-  font-size: 25px;
-  margin-bottom: 15px;
-}
-
-.nome {
-  color: white;
-  font-size: 19px;
-  margin-bottom: 15px;
+  border-radius: 18px;
+  margin-bottom: 20px;
 }
 
 .detalhe {
-  background: #192238;
-  border-left: 4px solid #e84352;
-  border-radius: 8px;
-  padding: 14px;
-  margin: 9px 0;
-  color: #e2e6f0;
+  background: #19243b;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.detalhe strong {
+  color: #ffbd39;
 }
 
 .preco {
-  color: #f5b52b;
-  font-size: 30px;
+  color: #38e47d;
+  font-size: 23px;
   font-weight: bold;
-  margin-top: 22px;
+  text-align: center;
+  margin: 20px 0;
 }
 
-.entrada {
-  margin: 10px 0 18px;
-  color: #ddd;
-}
-
-.status {
-  color: #43df8a;
-  margin-bottom: 15px;
-}
-
-.botao {
+.contato {
   display: block;
-  background: #16bd65;
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  background: #20c969;
   color: white;
   text-decoration: none;
   text-align: center;
-  padding: 15px;
-  border-radius: 8px;
+  font-size: 17px;
   font-weight: bold;
-  margin-top: 10px;
-}
-
-.botao:hover {
-  background: #109c52;
 }
 
 footer {
@@ -127,78 +146,104 @@ footer {
   font-size: 13px;
   border-top: 1px solid #303b52;
 }
+
+.escondido {
+  display: none;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="IMG-20261116-WA0153.jpg"
-    alt="Logo Imperial Games"
-    style="width:100%; max-width:100%; height:auto; display:block;">
 
-    <h1>👑 IMPERIAL GAMES 👑</h1>
-    <p>CATÁLOGO EXCLUSIVO • LORDS MOBILE</p>
+  <img
+    src="IMG-20261116-WA0153.jpg"
+    alt="Logo Imperial Games"
+    class="logo"
+  >
+
+  <h1>👑 IMPERIAL GAMES 👑</h1>
+  <p>CATÁLOGO EXCLUSIVO • LORDS MOBILE</p>
+
 </header>
 
 <div class="container">
 
-<h2 class="titulo">🔥 CONTAS DISPONÍVEIS 🔥</h2>
+  <div class="botoes">
 
-<div class="conta">
+    <button class="botao ativo" onclick="mostrar('destaques',this)">
+      ⭐ Destaques
+    </button>
 
-<img class="foto"
-src="conta-ig-001.jpg"
-alt="Conta Lords Mobile Imperial Games">
+    <button class="botao" onclick="mostrar('ofertas',this)">
+      ⚡ Ofertas Especiais
+    </button>
 
-<div class="info">
+  </div>
 
-<h2 class="ref">REF IG 001</h2>
-<img src="./IMG-20261116-WA0101.jpg" alt="Foto da conta IG 001" style="width:100%; max-width:300px; border-radius:12px; margin:10px 0;">
-<h3 class="nome">🔥 FILLER T5 – MEGA PROMOÇÃO</h3>
+  <h2 class="titulo">🔥 CONTAS DISPONÍVEIS 🔥</h2>
 
-<div class="detalhe">⚔️ Infantaria: 816%</div>
-<div class="detalhe">🏹 Arqueiros: 844%</div>
-<div class="detalhe">🐎 Cavalaria: 830%</div>
+  <!-- CONTA IG 001 -->
 
-<div class="detalhe">⭐ Heróis pagos lendários</div>
-<div class="detalhe">🧙 Familiares bem upados</div>
-<div class="detalhe">⚔️ Contra-ataque full</div>
-<div class="detalhe">🎯 5 slots</div>
-<div class="detalhe">👑 Set bem upado, várias peças míticas</div>
+  <div class="conta">
 
-<div class="preco">R$ 700,00</div>
+    <h2 class="referencia">REF IG 001</h2>
 
-<p class="entrada">
-💰 Entrada mínima: R$ 250,00
-</p>
+    <img
+      src="IMG-20261116-WA0101.jpg"
+      alt="Foto da conta IG 001"
+      class="foto"
+    >
 
-<p class="status">● Disponível para venda</p>
+    <h3>🔥 FILLER TS - MEGA PROMOÇÃO</h3>
 
-<h3>📲 ESCOLHA SEU VENDEDOR</h3>
+    <div class="detalhe">
+      ⚔️ Infantaria: <strong>816k</strong>
+    </div>
 
-<a class="botao"
-href="https://wa.me/5562992961148?text=Olá! Tenho interesse na conta REF IG 001 da Imperial Games."
-target="_blank">
-WhatsApp – Vendedor 1
-</a>
+    <div class="detalhe">
+      🏹 Arqueiros: <strong>844k</strong>
+    </div>
 
-<a class="botao"
-href="https://wa.me/5562993053215?text=Olá! Tenho interesse na conta REF IG 001 da Imperial Games."
-target="_blank">
-WhatsApp – Vendedor 2
-</a>
+    <div class="detalhe">
+      🐎 Cavalaria: <strong>830k</strong>
+    </div>
 
-</div>
-</div>
+    <div class="detalhe">
+      👑 Referência: IG 001
+    </div>
+
+    <div class="preco">
+      CONSULTE O VALOR
+    </div>
+
+    <a
+      href="https://wa.me/5500000000000"
+      class="contato"
+    >
+      💬 CONSULTAR DISPONIBILIDADE
+    </a>
+
+  </div>
 
 </div>
 
 <footer>
-👑 IMPERIAL GAMES 👑
-<br><br>
-Catálogo de contas • Lords Mobile
+  👑 IMPERIAL GAMES 👑
+  <p>Catálogo exclusivo Lords Mobile</p>
+  <p>© Todos os direitos reservados</p>
 </footer>
+
+<script>
+function mostrar(secao, botao) {
+  document.querySelectorAll('.botao').forEach(b => {
+    b.classList.remove('ativo');
+  });
+
+  botao.classList.add('ativo');
+}
+</script>
 
 </body>
 </html>
