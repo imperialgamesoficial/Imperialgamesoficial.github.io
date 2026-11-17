@@ -18,7 +18,7 @@
       font-family: Arial, sans-serif;
     }
 
-    /* TOPO ORIGINAL - MANTIDO */
+    /* TOPO MANTIDO */
     .banner {
       width: 100%;
       line-height: 0;
@@ -82,7 +82,7 @@
       margin: 22px 0 16px;
     }
 
-    /* DESTAQUE DA CONTA */
+    /* CARD DA CONTA */
     .conta {
       background: linear-gradient(145deg, #1a1025, #100d18);
       border: 1px solid #c28a45;
@@ -172,13 +172,14 @@
       font-size: 12px;
     }
 
-    /* INFORMAÇÕES */
+    /* DIFERENCIAIS */
     .lista {
       padding-left: 20px;
       line-height: 1.9;
       color: #eee;
     }
 
+    /* ARTEFATOS */
     .artefatos {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -237,7 +238,7 @@
       font-weight: bold;
     }
 
-    /* WHATSAPP */
+    /* CONTATOS */
     .contatos {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -269,17 +270,98 @@
       border-top: 1px solid #38243e;
     }
 
+    /* AJUSTES PARA CELULAR */
     @media (max-width: 480px) {
-      .stats {
-        grid-template-columns: 1fr;
+      .container {
+        width: calc(100% - 20px);
       }
 
-      .contatos {
-        grid-template-columns: 1fr;
+      .detalhes {
+        padding: 12px;
+      }
+
+      .conta h2 {
+        font-size: 21px;
+        margin: 10px 12px;
+      }
+
+      .chamada {
+        padding: 12px 10px;
+        margin-bottom: 14px;
+      }
+
+      .chamada h3 {
+        font-size: 19px;
+      }
+
+      .chamada p {
+        font-size: 14px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        margin: 10px 0 15px;
+      }
+
+      .stat {
+        padding: 10px 3px;
+      }
+
+      .stat strong {
+        font-size: 19px;
+      }
+
+      .stat span {
+        font-size: 11px;
+      }
+
+      .subtitulo {
+        font-size: 16px;
+        margin: 15px 0 8px;
+      }
+
+      .lista {
+        font-size: 14px;
+        line-height: 1.7;
+        padding-left: 18px;
       }
 
       .artefatos {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        margin: 10px 0 15px;
+      }
+
+      .artefato {
+        padding: 10px 3px;
+      }
+
+      .artefato strong {
+        font-size: 19px;
+      }
+
+      .artefato span {
+        font-size: 10px;
+      }
+
+      .preco {
+        padding: 15px 10px;
+        margin: 16px 0;
+      }
+
+      .preco strong {
+        font-size: 29px;
+      }
+
+      .contatos {
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+      }
+
+      .contatos a {
+        padding: 12px 5px;
+        font-size: 12px;
       }
     }
   </style>
@@ -287,7 +369,7 @@
 
 <body>
 
-  <!-- TOPO ORIGINAL - NÃO ALTERADO -->
+  <!-- TOPO -->
   <div class="banner">
     <img src="A736C8F9-77D0-478E-9D83-FB827B9C3A0E.png"
          alt="Banner Imperial Games - Lords Mobile">
@@ -295,7 +377,10 @@
 
   <section class="intro">
     <h1>Seu próximo império começa aqui!</h1>
-    <p>Contas de Lords Mobile em destaque, com informações e atributos apresentados para você escolher sua próxima conquista.</p>
+    <p>
+      Contas de Lords Mobile em destaque, com informações
+      e atributos para você escolher sua próxima conquista.
+    </p>
   </section>
 
   <nav class="actions">
@@ -315,10 +400,9 @@
 
       <h2>🔥 FILLER T5 — MEGA PROMOÇÃO</h2>
 
-      <!-- FOTO DA CONTA -->
       <img class="foto"
-     src="IMG-20261116-WA0101.jpg.jpg"
-     alt="Conta Filler T5 Imperial Games">
+           src="IMG-20261116-WA0101.jpg.jpg"
+           alt="Conta Filler T5 Imperial Games">
 
       <div class="detalhes">
 
