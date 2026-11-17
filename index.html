@@ -1,252 +1,425 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imperial Games | Lords Mobile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperial Games | Lords Mobile</title>
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  background: #090711;
-  color: white;
-  font-family: Arial, sans-serif;
-}
+    body {
+      margin: 0;
+      background: #090711;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
 
-header {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  text-align: center;
-  border-radius: 0;
-}
+    /* TOPO ORIGINAL - MANTIDO */
+    .banner {
+      width: 100%;
+      line-height: 0;
+      background: #120817;
+    }
 
-.logo {
-    width: 100%;
-    max-width: none;
-    height: auto;
-    display: block;
-    margin: 0;
-    border-radius: 0;
-    object-fit: cover;
-}
-  
-header h1 {
-  color: #ff315c;
-  font-size: 27px;
-  letter-spacing: 2px;
-}
+    .banner img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 330px;
+      object-fit: cover;
+    }
 
-header p {
-  margin-top: 8px;
-  color: #ddd;
-  font-size: 14px;
-}
+    .intro {
+      text-align: center;
+      padding: 24px 16px 14px;
+    }
 
-.container {
-  max-width: 750px;
-  margin: auto;
-  padding: 15px;
-}
+    .intro h1 {
+      margin: 0 0 8px;
+      color: #f4c76b;
+      font-size: clamp(25px, 5vw, 38px);
+      text-transform: uppercase;
+    }
 
-.botoes {
-  display: flex;
-  gap: 10px;
-  margin: 20px 0;
-}
+    .intro p {
+      margin: 0 auto;
+      max-width: 720px;
+      color: #d7cbdc;
+      line-height: 1.5;
+    }
 
-.botao {
-  flex: 1;
-  padding: 20px 8px;
-  border: 2px solid #d9234f;
-  border-radius: 18px;
-  background: #190d1b;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    /* BOTÕES */
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 16px;
+    }
 
-.botao.ativo {
-  background: linear-gradient(135deg,#ff315c,#a50035);
-  color: white;
-  }
+    .actions a {
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, #8e174f, #d52c70);
+      border: 1px solid #f0bd62;
+      border-radius: 9px;
+      padding: 12px 20px;
+      font-weight: 800;
+    }
 
-.titulo {
-  color: #ffb52b;
-  text-align: center;
-  font-size: 23px;
-  margin: 28px 0 20px;
-}
+    .container {
+      width: min(100% - 28px, 850px);
+      margin: 0 auto 35px;
+    }
 
-.conta {
-  background: #160d1b;
-  border: 1px solid #70213c;
-  border-left: 5px solid #e52650;
-  border-radius: 18px;
-  padding: 18px;
-  margin-bottom: 25px;
-  overflow: hidden;
-  }
+    .section-title {
+      color: #f4c76b;
+      text-align: center;
+      margin: 22px 0 16px;
+    }
 
-.referencia, .titulo {
-  color: #ff315c;
-}
+    /* DESTAQUE DA CONTA */
+    .conta {
+      background: linear-gradient(145deg, #1a1025, #100d18);
+      border: 1px solid #c28a45;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px #0008;
+    }
 
-.foto {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 18px;
-  margin-bottom: 20px;
-}
+    .tag {
+      display: inline-block;
+      margin: 17px 17px 0;
+      padding: 7px 12px;
+      border-radius: 30px;
+      color: #190b16;
+      background: #f4c76b;
+      font-size: 12px;
+      font-weight: 900;
+    }
 
-.detalhe {
-  background: #19243b;
-  padding: 12px;
-  border-radius: 10px;
-  margin: 8px 0;
-  font-size: 16px;
-}
+    .conta h2 {
+      color: #ff5b9b;
+      margin: 12px 17px;
+      font-size: clamp(21px, 4vw, 29px);
+    }
 
-.detalhe strong {
-  color: #ffbd39;
-}
+    .foto {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-.preco {
-  color: #38e47d;
-  font-size: 23px;
-  font-weight: bold;
-  text-align: center;
-  margin: 20px 0;
-}
+    .detalhes {
+      padding: 17px;
+    }
 
-.contato {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  border-radius: 12px;
-  background: #20c969;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-size: 17px;
-  font-weight: bold;
-}
+    .chamada {
+      text-align: center;
+      padding: 17px 12px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #65133f, #a51d58, #35132e);
+      border: 1px solid #e9b65c;
+    }
 
-footer {
-  text-align: center;
-  padding: 25px;
-  color: #aaa;
-  font-size: 13px;
-  border-top: 1px solid #303b52;
-}
+    .chamada h3 {
+      color: #ffe09a;
+      font-size: 23px;
+      margin: 0 0 8px;
+    }
 
-.escondido {
-  display: none;
-}
-</style>
+    .chamada p {
+      margin: 0;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    .subtitulo {
+      color: #f4c76b;
+      font-weight: 900;
+      margin: 20px 0 10px;
+    }
+
+    /* BÔNUS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin: 12px 0 20px;
+    }
+
+    .stat {
+      background: #28162f;
+      border: 1px solid #9c426d;
+      border-radius: 10px;
+      padding: 14px 6px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: #ff78ad;
+      font-size: 23px;
+    }
+
+    .stat span {
+      color: #ddd;
+      font-size: 12px;
+    }
+
+    /* INFORMAÇÕES */
+    .lista {
+      padding-left: 20px;
+      line-height: 1.9;
+      color: #eee;
+    }
+
+    .artefatos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin: 12px 0 20px;
+    }
+
+    .artefato {
+      text-align: center;
+      padding: 13px 5px;
+      background: #24152b;
+      border: 1px solid #79513c;
+      border-radius: 10px;
+    }
+
+    .artefato strong {
+      display: block;
+      color: #f4c76b;
+      font-size: 22px;
+    }
+
+    .artefato span {
+      font-size: 11px;
+      color: #ddd;
+    }
+
+    /* PREÇO */
+    .preco {
+      text-align: center;
+      margin: 22px 0;
+      padding: 20px 14px;
+      background: linear-gradient(135deg, #321426, #541638);
+      border: 1px solid #e4ae54;
+      border-radius: 12px;
+    }
+
+    .preco .valor-antigo {
+      color: #d8b8c8;
+      font-size: 13px;
+    }
+
+    .preco strong {
+      display: block;
+      color: #f4c76b;
+      font-size: 34px;
+      margin: 7px 0;
+    }
+
+    .preco .entrada {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 14px;
+      border-radius: 30px;
+      background: #a51d58;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* WHATSAPP */
+    .contatos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .contatos a {
+      text-align: center;
+      padding: 14px 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #168b51, #08713d);
+      border: 1px solid #58d694;
+    }
+
+    .nota {
+      color: #bfb4c5;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    footer {
+      text-align: center;
+      color: #bba9bd;
+      padding: 25px 12px;
+      border-top: 1px solid #38243e;
+    }
+
+    @media (max-width: 480px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .contatos {
+        grid-template-columns: 1fr;
+      }
+
+      .artefatos {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-
- <img src="A736C8F9-77D0-478E-9D83-FB827B9C3A0E.png"
-     class="logo"
-     alt="Imperial Games">
-
-  <h1>👑 IMPERIAL GAMES 👑</h1>
-  <p>CATÁLOGO EXCLUSIVO • LORDS MOBILE</p>
-
-</header>
-
-<div class="container">
-
-  <div class="botoes">
-
-    <button class="botao ativo" onclick="mostrar('destaques',this)">
-      ⭐ Destaques
-    </button>
-
-    <button class="botao" onclick="mostrar('ofertas',this)">
-      ⚡ Ofertas Especiais
-    </button>
-
+  <!-- TOPO ORIGINAL - NÃO ALTERADO -->
+  <div class="banner">
+    <img src="A736C8F9-77D0-478E-9D83-FB827B9C3A0E.png"
+         alt="Banner Imperial Games - Lords Mobile">
   </div>
 
-  <h2 class="titulo">🔥 CONTAS DISPONÍVEIS 🔥</h2>
+  <section class="intro">
+    <h1>Seu próximo império começa aqui!</h1>
+    <p>Contas de Lords Mobile em destaque, com informações e atributos apresentados para você escolher sua próxima conquista.</p>
+  </section>
 
-  <!-- CONTA IG 001 -->
+  <nav class="actions">
+    <a href="#destaques">🔥 Conta em destaque</a>
+    <a href="#ofertas">💎 Ofertas especiais</a>
+  </nav>
 
-  <div class="conta">
+  <main class="container">
 
-    <h2 class="referencia">REF IG 001</h2>
+    <h2 class="section-title" id="destaques">
+      👑 CONTA EM DESTAQUE
+    </h2>
 
-    <img
-      src="IMG-20261116-WA0101.jpg"
-      alt="Foto da conta IG 001"
-      class="foto"
-    >
+    <article class="conta" id="ofertas">
 
-    <h3>🔥 FILLER TS - MEGA PROMOÇÃO</h3>
+      <span class="tag">REF IG 001 · MEGA PROMOÇÃO</span>
 
-    <div class="detalhe">
-      ⚔️ Infantaria: <strong>816k</strong>
-    </div>
+      <h2>🔥 FILLER T5 — MEGA PROMOÇÃO</h2>
 
-    <div class="detalhe">
-      🏹 Arqueiros: <strong>844k</strong>
-    </div>
+      <!-- FOTO DA CONTA -->
+      <img class="foto"
+           src="IG001.jpg"
+           alt="Conta Filler T5 Imperial Games">
 
-    <div class="detalhe">
-      🐎 Cavalaria: <strong>830k</strong>
-    </div>
+      <div class="detalhes">
 
-    <div class="detalhe">
-      👑 Referência: IG 001
-    </div>
+        <div class="chamada">
+          <h3>👑 UMA OPORTUNIDADE IMPERIAL!</h3>
+          <p>
+            Uma conta com excelentes atributos, heróis lendários,
+            familiares evoluídos e equipamentos muito bem desenvolvidos.
+          </p>
+        </div>
 
-    <div class="preco">
-      CONSULTE O VALOR
-    </div>
+        <p class="subtitulo">⚔️ BÔNUS INDIVIDUAIS</p>
 
-<a href="https://wa.me/5562992961148"
-class="contato" target="_blank">
-💬 FALAR COM VENDEDOR 1
-</a>
+        <div class="stats">
+          <div class="stat">
+            <strong>816%</strong>
+            <span>🛡️ Infantaria</span>
+          </div>
 
-    
-<a href="https://wa.me/5562993053215"
-class="contato" target="_blank">
-💬 FALAR COM VENDEDOR 2
-</a>
+          <div class="stat">
+            <strong>844%</strong>
+            <span>🏹 Arqueiros</span>
+          </div>
 
-  </div>
+          <div class="stat">
+            <strong>830%</strong>
+            <span>🐎 Cavalaria</span>
+          </div>
+        </div>
 
-</div>
+        <p class="subtitulo">✨ DIFERENCIAIS DA CONTA</p>
 
-<footer>
-  👑 IMPERIAL GAMES 👑
-  <p>Catálogo exclusivo Lords Mobile</p>
-  <p>© Todos os direitos reservados</p>
-</footer>
+        <ul class="lista">
+          <li>🔥 Heróis pagos lendários</li>
+          <li>🦁 Familiares bem upados</li>
+          <li>⚔️ Contra-ataque FULL</li>
+          <li>💎 5 slots</li>
+          <li>👑 Sets bem upados</li>
+          <li>✨ Várias peças míticas</li>
+        </ul>
 
-<script>
-function mostrar(secao, botao) {
-  document.querySelectorAll('.botao').forEach(b => {
-    b.classList.remove('ativo');
-  });
+        <p class="subtitulo">🏆 COLEÇÃO DE ARTEFATOS</p>
 
-  botao.classList.add('ativo');
-}
-</script>
+        <div class="artefatos">
+          <div class="artefato">
+            <strong>482</strong>
+            <span>Estrelas totais</span>
+          </div>
+
+          <div class="artefato">
+            <strong>5</strong>
+            <span>Artefatos abençoados</span>
+          </div>
+
+          <div class="artefato">
+            <strong>816</strong>
+            <span>Níveis totais</span>
+          </div>
+        </div>
+
+        <div class="preco">
+          <span class="valor-antigo">VALOR TOTAL DA CONTA</span>
+          <strong>R$ 700,00</strong>
+          <span>Condição especial de pagamento</span>
+          <br>
+          <span class="entrada">🔥 Entrada mínima: R$ 250,00</span>
+        </div>
+
+        <p class="subtitulo">📲 GARANTA SUA CONTA!</p>
+
+        <p style="text-align:center; color:#ddd; line-height:1.5;">
+          Entre em contato com um de nossos vendedores
+          e informe a referência <b>IG 001</b>.
+        </p>
+
+        <div class="contatos">
+          <a href="https://wa.me/5562992961148"
+             target="_blank" rel="noopener">
+            🟢 VENDEDOR 1
+          </a>
+
+          <a href="https://wa.me/5562993053215"
+             target="_blank" rel="noopener">
+            🟢 VENDEDOR 2
+          </a>
+        </div>
+
+        <p class="nota">
+          Imperial Games · Seu império começa aqui! 👑
+        </p>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    © Imperial Games · Lords Mobile
+    <br>
+    Seu império começa aqui! 👑
+  </footer>
 
 </body>
 </html>
